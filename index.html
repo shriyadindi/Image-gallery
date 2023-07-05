@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image calender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="gallery-wrap">
+        <img src="https://github.com/shriyadindi/Image-gallery/blob/main/back.png?raw=true" id="backBtn">
+    <div class="gallery">
+        <div>
+            <span><img src="https://github.com/shriyadindi/Image-gallery/blob/main/image-1.png?raw=true"></span>
+            <span><img src="https://github.com/shriyadindi/Image-gallery/blob/main/image-2.png?raw=true"></span>
+            <span><img src="https://github.com/shriyadindi/Image-gallery/blob/main/image-3.png?raw=true"></span>
+        </div>
+        <div>
+            <span><img src="https://github.com/shriyadindi/Image-gallery/blob/main/image-4.png?raw=true"></span>
+            <span><img src="https://github.com/shriyadindi/Image-gallery/blob/main/image-5.png?raw=true"></span>
+            <span><img src="https://github.com/shriyadindi/Image-gallery/blob/main/image-6.png?raw=true"></span>
+        </div>
+    </div>
+    <img src="https://github.com/shriyadindi/Image-gallery/blob/main/next.png?raw=true" id="nextBtn">
+</div>
+
+<script>
+
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehaviour = "auto";
+    });
+
+    nextBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+    })
+    backBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -= 900;
+    })
+
+
+</script>
+
+</body>
+</html>
